@@ -1,0 +1,305 @@
+/* Mandi Center — дизайн «Сана»: глиняный кирпич, гипсовый орнамент, витражи-камария, латунные подносы */
+:root{
+  --night:#1A100A; --clay:#2B1A11; --brick:#40261A; --brick-2:#53321F; --line:rgba(244,232,214,.16);
+  --cream:#F4E8D6; --cream-2:#D2BFA4; --saffron:#EAAA3C; --on-saffron:#24160B;
+  --ruby:#C8412C; --teal:#2A9D8F; --emerald:#5FA34F; --cobalt:#4A6BC0; --rose:#D9677A;
+  --brass:linear-gradient(135deg,#B9873A 0%,#F1D08A 42%,#D6A957 62%,#9A6B2A 100%);
+  --f-head:'Unbounded',system-ui,sans-serif;
+  --f-body:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --f-ar:'Noto Naskh Arabic','Geeza Pro','Segoe UI',serif;
+  --r:20px; --stick-h:120px;
+  --trim:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14'%3E%3Cpath d='M0 12 6 4l6 8 6-8 6 8' fill='none' stroke='%23F4E8D6' stroke-width='1.6'/%3E%3Ccircle cx='12' cy='2.2' r='1.5' fill='%23EAAA3C'/%3E%3Ccircle cx='0' cy='2.2' r='1.5' fill='%23F4E8D6'/%3E%3Ccircle cx='24' cy='2.2' r='1.5' fill='%23F4E8D6'/%3E%3C/svg%3E");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--stick-h) + 10px);-webkit-text-size-adjust:100%}
+body{margin:0;background-color:var(--clay);color:var(--cream);font:400 15px/1.5 var(--f-body);-webkit-font-smoothing:antialiased;
+  background-image:repeating-linear-gradient(0deg,rgba(255,240,220,.022) 0 1px,transparent 1px 24px);padding-bottom:110px}
+[hidden]{display:none!important}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.icon-btn{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:rgba(26,16,10,.5);display:grid;place-items:center;color:var(--cream)}
+.icon-btn svg{width:20px;height:20px}
+
+/* ── Витраж «камария»: полуэллипс из цветных секторов с гипсовыми перемычками ── */
+.qam{--g1:#C8412C;--g2:#EAAA3C;--g3:#2A9D8F;--g4:#4A6BC0;--g5:#5FA34F;
+  position:relative;aspect-ratio:4/1;overflow:hidden;border-radius:50% 50% 0 0/100% 100% 0 0;
+  background:
+    radial-gradient(ellipse 15% 34% at 50% 100%,var(--cream) 0 96%,transparent 100%),
+    radial-gradient(ellipse 15% 34% at 50% 100%,transparent 0 99%,transparent 100%),
+    repeating-conic-gradient(from -90deg at 50% 100%,var(--cream) 0 1.4deg,transparent 1.4deg 22.5deg),
+    radial-gradient(ellipse 58% 70% at 50% 100%,transparent 0 96%,var(--cream) 96.5% 100%,transparent 100%),
+    conic-gradient(from -90deg at 50% 100%,var(--g1) 0 22.5deg,var(--g2) 0 45deg,var(--g3) 0 67.5deg,var(--g4) 0 90deg,var(--g5) 0 112.5deg,var(--g1) 0 135deg,var(--g2) 0 157.5deg,var(--g3) 0 180deg,transparent 0);
+}
+.qam::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 90% at 50% 100%,rgba(255,236,190,.38),transparent 70%);mix-blend-mode:screen;pointer-events:none}
+
+/* ── Шапка ── */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--night) 0%,#24160E 70%,var(--clay) 100%)}
+.hero-in{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 16px 0;max-width:1120px;margin:0 auto}
+.kicker{margin:0 0 8px;font:600 11px/1 var(--f-head);letter-spacing:3px;text-transform:uppercase;color:var(--saffron)}
+.brand{margin:0;font:800 34px/.95 var(--f-head);letter-spacing:-1px;text-transform:uppercase}
+.hero-meta{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
+.hero-meta li{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--cream-2);background:rgba(26,16,10,.45)}
+.hero-meta li.halal{color:#D9F0C8;border-color:rgba(95,163,79,.6);background:rgba(95,163,79,.16)}
+.hero-ar{position:absolute;right:-10px;top:-18px;z-index:1;font:700 150px/1 var(--f-ar);color:var(--cream);opacity:.06;pointer-events:none;user-select:none}
+.skyline{display:block;width:100%;height:84px;margin-top:4px}
+.skyline .w{animation:glow 5s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.5}}
+.searchbar{padding:10px 16px 0;max-width:1120px;margin:0 auto}
+.searchbar input{width:100%;min-height:48px;border-radius:999px;border:1.5px solid var(--line);background:var(--brick);color:var(--cream);padding:0 18px;font:500 16px var(--f-body)}
+.searchbar input::placeholder{color:var(--cream-2)}
+.nothing{padding:24px 16px;text-align:center;color:var(--cream-2)}
+
+/* ── Липкая навигация ── */
+.stick{position:sticky;top:0;z-index:30;background:rgba(26,16,10,.93);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.stick.shadow{box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px 16px 4px;max-width:620px;margin:0 auto}
+.tab{min-height:46px;display:grid;place-items:center;border-radius:999px 999px 10px 10px;border:1.5px solid var(--line);
+  font:700 12.5px/1 var(--f-head);letter-spacing:.6px;text-transform:uppercase;text-decoration:none;color:var(--cream-2)}
+.tab.on{background:var(--saffron);border-color:var(--saffron);color:var(--on-saffron)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:6px 16px 10px;scrollbar-width:none;max-width:1120px;margin:0 auto}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line);
+  font:600 14px var(--f-body);text-decoration:none;color:var(--cream-2)}
+.chip.on{color:var(--cream);border-color:var(--saffron);box-shadow:inset 0 -3px 0 var(--saffron)}
+.chip.off{display:none}
+
+/* ── Баннер раздела ── */
+.sec-banner{position:relative;margin:44px auto 4px;max-width:720px;text-align:center}
+.sec-banner .qam{aspect-ratio:3.2/1;width:100%}
+.sec-banner .lintel{height:14px;background:var(--cream);border-radius:3px;margin-top:-1px;box-shadow:0 10px 0 -6px var(--brick-2)}
+.sec-title{margin:14px 0 0;font:800 clamp(30px,9vw,52px)/1 var(--f-head);letter-spacing:-1px;text-transform:uppercase}
+.sec-ar{margin:6px 0 0;font:700 26px/1.2 var(--f-ar);color:var(--saffron)}
+.sec:first-of-type .sec-banner{display:none}
+.sec:first-of-type > .cat:first-of-type .cat-h{margin-top:18px}
+
+/* ── Категория ── */
+.cat-h{display:flex;align-items:flex-end;gap:12px;margin:40px 0 0}
+.cat-h .num{flex:none;min-width:44px;height:44px;display:grid;place-items:center;border-radius:50% 50% 6px 6px;background:var(--brick-2);
+  font:700 22px/1 var(--f-ar);color:var(--saffron);box-shadow:inset 0 0 0 1.5px rgba(244,232,214,.25)}
+.cat-h h2{margin:0;font:800 23px/1.1 var(--f-head);letter-spacing:-.4px;text-transform:uppercase}
+.cat-h small{display:block;margin-top:4px;font:500 13.5px/1.3 var(--f-body);color:var(--cream-2)}
+.trim{height:14px;margin:10px 0 14px;background:var(--trim) repeat-x left center/24px 14px;opacity:.9}
+.lead-t{margin:-4px 0 14px;color:var(--cream-2);font-size:14.5px}
+.cover{margin:0 0 14px;border-radius:200px 200px 14px 14px/120px 120px 14px 14px;overflow:hidden;aspect-ratio:16/8;
+  box-shadow:0 0 0 3px var(--cream),0 0 0 7px var(--clay),0 0 0 8.5px rgba(244,232,214,.4)}
+.cover img{width:100%;height:100%;object-fit:cover}
+
+/* ── Манди: «окна» ── */
+.mandi-grid{display:grid;gap:30px;margin-top:6px}
+.mandi-grid > *{min-width:0}
+.win-card{background:var(--brick);border-radius:24px 24px var(--r) var(--r);padding:10px 10px 16px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.window{position:relative;overflow:hidden;border-radius:50% 50% 10px 10px/26.6% 26.6% 10px 10px;
+  box-shadow:0 0 0 3px var(--cream),0 0 0 7px var(--brick),0 0 0 8.5px rgba(244,232,214,.45)}
+.window .qam{display:block}
+.win-photo{position:relative;aspect-ratio:16/11;border-top:6px solid var(--cream);background:var(--night)}
+.win-photo img{width:100%;height:100%;object-fit:cover}
+.win-title{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 12px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+  background:linear-gradient(180deg,transparent,rgba(18,10,5,.92))}
+.win-title h3{margin:0;font:800 21px/1.1 var(--f-head);letter-spacing:-.3px}
+.win-title .from{flex:none;font:700 14px/1.2 var(--f-head);color:var(--saffron);white-space:nowrap}
+.seal{position:absolute;top:12px;right:12px;background:var(--saffron);color:var(--on-saffron);font:700 10.5px/1 var(--f-head);letter-spacing:.8px;
+  text-transform:uppercase;padding:8px 10px;border-radius:4px;transform:rotate(4deg);box-shadow:0 6px 14px rgba(0,0,0,.4)}
+.win-body{padding:14px 4px 0}
+.desc{margin:0;color:var(--cream-2);font-size:14.5px}
+.lbl{margin:14px 0 8px;font:700 11px/1 var(--f-head);letter-spacing:1.6px;text-transform:uppercase;color:var(--cream-2)}
+.trays{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.tray{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;min-height:44px;padding:12px 4px 10px;
+  border-radius:16px;border:1.5px solid var(--line);background:rgba(26,16,10,.3)}
+.plate{display:grid;place-items:center;border-radius:50%;margin-bottom:4px;color:var(--on-saffron);font:800 16px/1 var(--f-head);
+  background:radial-gradient(circle at 50% 42%,#F7E2AE 0 40%,#C9973F 41% 50%,#F1D08A 51% 58%,#8E6326 59% 100%);box-shadow:0 5px 12px rgba(0,0,0,.45)}
+.plate.s1{width:40px;height:40px;font-size:15px}.plate.s2{width:50px;height:50px}.plate.s3{width:60px;height:60px;font-size:18px}
+.tray .cap{font-size:12px;color:var(--cream-2)}
+.tray .tp{font:700 14px/1.2 var(--f-body);font-variant-numeric:tabular-nums}
+.tray .tpp{font-size:11.5px;color:var(--cream-2);font-variant-numeric:tabular-nums}
+.tray .save{position:absolute;top:-9px;right:6px;background:var(--ruby);color:#fff;font:700 10.5px/1 var(--f-head);padding:4px 6px;border-radius:999px}
+.tray[aria-pressed="true"]{border-color:var(--saffron);background:rgba(234,170,60,.13)}
+.tray[aria-pressed="true"] .plate{box-shadow:0 0 0 3px var(--brick),0 0 0 5px var(--saffron),0 6px 16px rgba(0,0,0,.5)}
+.meths{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.meth{min-height:48px;border-radius:14px;border:1.5px solid var(--line);background:rgba(26,16,10,.3);font:700 14px var(--f-head)}
+.meth[aria-pressed="true"]{border-color:var(--saffron);background:rgba(234,170,60,.13);color:var(--saffron)}
+.pp{min-height:20px;margin:10px 0 0;font-size:13.5px;font-weight:600;color:#BFE0A8}
+.hint{margin:8px 0 0;font-size:13.5px;color:var(--cream-2);border-left:3px solid var(--saffron);padding:2px 0 2px 10px}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.price-big{font:800 27px/1 var(--f-head);font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.add-tray{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 22px 0 16px;border:0;border-radius:999px;background:var(--saffron);
+  color:var(--on-saffron);font:700 14px/1 var(--f-head);box-shadow:0 8px 20px rgba(234,170,60,.25)}
+.add-tray svg,.add-round svg,.step svg,.ups-btn svg{width:18px;height:18px}
+.add-round{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--saffron);color:var(--on-saffron);display:grid;place-items:center}
+.add-round[disabled]{background:var(--brick-2);color:var(--cream-2);cursor:not-allowed}
+.step{display:inline-flex;align-items:center;gap:2px;border:1.5px solid var(--saffron);border-radius:999px;padding:2px;background:rgba(234,170,60,.1)}
+.step button{width:44px;height:44px;border-radius:50%;border:0;background:var(--saffron);color:var(--on-saffron);display:grid;place-items:center}
+.step .q{min-width:32px;text-align:center;font:800 16px var(--f-head);font-variant-numeric:tabular-nums}
+.ups{margin-top:16px;padding-top:4px;border-top:1px dashed rgba(244,232,214,.22)}
+.ups-row{display:flex;flex-wrap:wrap;gap:8px}
+.ups-btn{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px 0 6px;border-radius:999px;
+  border:1.5px dashed rgba(244,232,214,.38);background:transparent;font-weight:600;font-size:14px}
+.ups-btn .pl{width:30px;height:30px;border-radius:50%;background:var(--cream);color:var(--clay);display:grid;place-items:center;flex:none}
+.ups-btn b{color:var(--saffron);font-weight:700;font-variant-numeric:tabular-nums}
+.inq{font:700 11px/1 var(--f-head);background:var(--emerald);color:#fff;border-radius:999px;padding:4px 7px}
+
+/* ── «С манди берут» — латунный поднос ── */
+.pairing{border-radius:30px;padding:18px 0 18px;background:var(--brass);color:var(--on-saffron);box-shadow:inset 0 0 0 3px rgba(255,240,200,.45),0 18px 40px rgba(0,0,0,.35)}
+.pairing h3{margin:0 18px;font:800 20px/1.1 var(--f-head);text-transform:uppercase;letter-spacing:-.3px}
+.pairing p{margin:4px 18px 12px;font-weight:600;font-size:14px}
+.pair-row{display:flex;gap:10px;overflow-x:auto;padding:4px 18px 4px;scrollbar-width:none}
+.pair-row::-webkit-scrollbar{display:none}
+.ptile{flex:none;width:152px;display:flex;flex-direction:column;background:rgba(36,22,11,.92);color:var(--cream);border-radius:80px 80px 16px 16px;overflow:hidden}
+.ptile .pimg{height:104px;background:var(--night)}
+.ptile .pimg img{width:100%;height:100%;object-fit:cover}
+.ptile .pimg.qam{aspect-ratio:auto}
+.ptile .pt{flex:1;padding:10px 12px 0;font-weight:700;font-size:14px;line-height:1.25}
+.ptile .pt span{display:block;font-weight:500;font-size:12.5px;color:var(--cream-2)}
+.ptile .pb{display:flex;align-items:center;justify-content:space-between;padding:8px 8px 10px 12px;font:700 14px var(--f-head);font-variant-numeric:tabular-nums}
+
+/* ── «Что такое манди» ── */
+.story{margin-top:22px;background:var(--brick);border-radius:var(--r);overflow:hidden}
+.story summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 16px;cursor:pointer;font:700 15px var(--f-head)}
+.story summary::-webkit-details-marker{display:none}
+.story summary::after{content:"+";font:700 22px var(--f-head);color:var(--saffron)}
+.story[open] summary::after{content:"−"}
+.story-b{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:0 16px 16px;color:var(--cream-2)}
+.story-b img{width:96px;height:120px;object-fit:cover;border-radius:48px 48px 10px 10px}
+.story-b p{margin:0}
+
+/* ── Строки с фото (чередуются) ── */
+.rows{display:grid;gap:14px}
+.rows > *{min-width:0}
+.row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;align-items:start;padding:14px;background:var(--brick);border-radius:var(--r)}
+.rows .row:nth-child(even){grid-template-columns:minmax(0,1fr) 104px}
+.rows .row:nth-child(even) .thumb{order:2}
+.thumb{width:104px;aspect-ratio:4/5;border-radius:52px 52px 10px 10px;overflow:hidden;background:var(--night);
+  box-shadow:0 0 0 2px var(--cream),0 0 0 5px var(--brick),0 0 0 6.5px rgba(244,232,214,.32)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb.qam{aspect-ratio:4/5;background-size:auto}
+.thumb.glass{background:
+    repeating-conic-gradient(from -90deg at 50% 62%,var(--cream) 0 1.6deg,transparent 1.6deg 30deg),
+    conic-gradient(from -90deg at 50% 62%,var(--g1) 0 30deg,var(--g2) 0 60deg,var(--g3) 0 90deg,var(--g4) 0 120deg,var(--g5) 0 150deg,var(--g1) 0 180deg,var(--g2) 0 210deg,var(--g3) 0 240deg,var(--g4) 0 270deg,var(--g5) 0 300deg,var(--g1) 0 330deg,var(--g2) 0 360deg)}
+.thumb.glass::after{content:"";display:block;width:34%;aspect-ratio:1;margin:calc(62% * 1.25 - 17%) auto 0;border-radius:50%;background:var(--cream);transform:translateY(-50%)}
+.rb h3{margin:0;font:700 15.5px/1.25 var(--f-head);letter-spacing:-.2px}
+.rb .desc{margin-top:5px;font-size:14px}
+.vol{margin:6px 0 0;font-size:13px;font-weight:600;color:var(--cream-2)}
+.tag{display:inline-block;margin-bottom:6px;background:var(--saffron);color:var(--on-saffron);font:700 10px/1 var(--f-head);letter-spacing:.8px;text-transform:uppercase;padding:5px 7px;border-radius:4px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{min-height:44px;min-width:64px;padding:5px 11px;border-radius:12px;border:1.5px solid var(--line);background:rgba(26,16,10,.3);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left}
+.pill .l{font-weight:700;font-size:13px;line-height:1.2}
+.pill .p{font-size:12.5px;color:var(--cream-2);font-variant-numeric:tabular-nums;line-height:1.2}
+.pill[aria-pressed="true"]{border-color:var(--saffron);background:rgba(234,170,60,.13)}
+.pill[aria-pressed="true"] .p{color:var(--cream)}
+.row .buy{margin-top:12px}
+.price{font:800 18px/1 var(--f-head);font-variant-numeric:tabular-nums}
+.row.out,.li.out{opacity:.55}
+
+/* ── Список с пунктиром ── */
+.menu-list{list-style:none;margin:0;padding:4px 16px;background:var(--brick);border-radius:var(--r)}
+.li{display:flex;align-items:center;column-gap:10px;padding:8px 0;min-height:60px;border-bottom:1px solid var(--line)}
+.li:last-child{border-bottom:0}
+.li-main{flex:0 1 auto;min-width:0;max-width:60%}
+.li [data-act]{flex:none}
+.li .nm{font-weight:700;font-size:15px;line-height:1.3}
+.li .vol{display:inline;margin:0 0 0 4px}
+.li .ds{display:block;font-size:13px;color:var(--cream-2);line-height:1.35}
+.li .lead{flex:1;min-width:14px;align-self:center;border-bottom:2px dotted rgba(244,232,214,.32);height:0;transform:translateY(5px)}
+.li .pr{font:700 15px/1 var(--f-head);white-space:nowrap;font-variant-numeric:tabular-nums}
+.li.out .pr{font:600 13px var(--f-body);color:var(--cream-2)}
+.li .pills{flex-basis:100%;margin:6px 0 2px}
+
+/* ── О ресторане ── */
+.about{margin:56px 0 0;background:var(--night);border-top:1px solid var(--line)}
+.about-in{max-width:1120px;margin:0 auto;padding:26px 16px 30px}
+.about h2{margin:0;font:800 24px/1.1 var(--f-head);text-transform:uppercase}
+.about p{margin:8px 0 0;color:var(--cream-2)}
+.about .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.about .links a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);text-decoration:none;font-weight:700}
+.about .links a.main{background:var(--saffron);border-color:var(--saffron);color:var(--on-saffron)}
+
+/* ── Нижняя панель «Ваш поднос» ── */
+.traybar{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));pointer-events:none}
+.traybtn{pointer-events:auto;display:flex;align-items:center;gap:12px;width:100%;max-width:560px;margin:0 auto;min-height:60px;padding:0 20px 0 8px;border:0;border-radius:999px;
+  background:var(--brass);color:var(--on-saffron);font:700 14.5px/1.2 var(--f-head);box-shadow:0 12px 34px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,250,230,.6)}
+.traybtn .cnt{flex:none;min-width:44px;height:44px;padding:0 8px;border-radius:999px;background:var(--clay);color:var(--saffron);display:grid;place-items:center;font-weight:800}
+.traybtn .t{flex:1;min-width:0;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.traybtn .sum{flex:none;font-variant-numeric:tabular-nums;font-weight:800}
+.traybtn.bump{animation:bump .45s ease}
+@keyframes bump{40%{transform:scale(1.045)}}
+.fly{position:fixed;z-index:80;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--saffron);box-shadow:0 0 14px 3px rgba(234,170,60,.7);pointer-events:none}
+
+/* ── Шторка ── */
+.sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center}
+.sheet-bg{position:absolute;inset:0;background:rgba(10,5,2,.7)}
+.panel{position:relative;width:100%;max-width:560px;max-height:90vh;display:flex;flex-direction:column;background:var(--brick);border-radius:28px 28px 0 0;
+  padding:0 16px calc(16px + env(safe-area-inset-bottom));box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+.panel::before{content:"";flex:none;height:14px;margin:12px -4px 0;background:var(--trim) repeat-x center/24px 14px;opacity:.8}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0}
+.panel-h h2{margin:0;font:800 22px/1.2 var(--f-head);text-transform:uppercase}
+.lines{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1}
+.line{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.line .n{flex:1;min-width:0;font-weight:700;font-size:15px;line-height:1.3}
+.line .n span{display:block;font-weight:500;font-size:13px;color:var(--cream-2)}
+.line .lp{font:700 14px var(--f-head);white-space:nowrap;min-width:72px;text-align:right;font-variant-numeric:tabular-nums}
+.line.empty{justify-content:center;color:var(--cream-2);border:0;padding:24px 0}
+.sheet-ups{padding:12px 0 4px}
+.sheet-ups .ups-row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px 4px}
+.sheet-ups .ups-row::-webkit-scrollbar{display:none}
+.sheet-ups .ups-btn{flex:none;white-space:nowrap}
+.lines{min-height:120px}
+.sheet-ups p{margin:0 0 8px;font:700 11px/1 var(--f-head);letter-spacing:1.6px;text-transform:uppercase;color:var(--cream-2)}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;font:800 16px var(--f-head);text-transform:uppercase}
+.total span:last-child{font-size:24px;font-variant-numeric:tabular-nums}
+.panel-f p{margin:8px 0 0;font-size:13px;color:var(--cream-2)}
+.panel-actions{display:flex;gap:8px;margin-top:14px}
+.btn-ghost{min-height:50px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-weight:700}
+.btn-ghost.confirm{border-color:var(--ruby);color:#FFB4A6}
+.btn-main{flex:1;min-height:50px;border:0;border-radius:999px;background:var(--saffron);color:var(--on-saffron);font:700 14px var(--f-head)}
+body.lock{overflow:hidden}
+
+/* ── Чек для официанта ── */
+.waiter{position:fixed;inset:0;z-index:70;background:var(--night);overflow-y:auto;padding:16px 14px 40px}
+.w-top{max-width:540px;margin:0 auto 12px;display:flex;justify-content:flex-end}
+.receipt{position:relative;max-width:540px;margin:0 auto;background:#FBF4E6;color:#22150C;padding:26px 20px 30px;border-radius:6px 6px 0 0}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;
+  background:linear-gradient(135deg,#FBF4E6 33.33%,transparent 33.33%) 0 0/18px 12px repeat-x,linear-gradient(225deg,#FBF4E6 33.33%,transparent 33.33%) 0 0/18px 12px repeat-x}
+.receipt .r-brand{margin:0;text-align:center;font:800 13px/1 var(--f-head);letter-spacing:3px;text-transform:uppercase;color:#8A5A1F}
+.receipt h2{margin:8px 0 0;text-align:center;font:800 26px/1.1 var(--f-head);text-transform:uppercase}
+.receipt .r-trim{height:14px;margin:14px 0 6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14'%3E%3Cpath d='M0 12 6 4l6 8 6-8 6 8' fill='none' stroke='%238A5A1F' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x center/24px 14px}
+.r-lines{list-style:none;margin:0;padding:0}
+.r-lines li{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1.5px dashed #CDB898;font-size:19px;line-height:1.3}
+.r-lines .wq{flex:none;min-width:48px;font:800 22px/1 var(--f-head)}
+.r-lines .wn{flex:1;font-weight:700}
+.r-lines .wn span{display:block;font-weight:600;font-size:16px;color:#6B5238}
+.r-lines .wp{flex:none;font:700 17px var(--f-head);white-space:nowrap}
+.r-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;font:800 20px var(--f-head);text-transform:uppercase}
+.r-total span:last-child{font-size:30px}
+.r-note{margin:14px 0 0;text-align:center;font-size:14px;color:#6B5238}
+
+/* ── Планшет и десктоп ── */
+@media (min-width:760px){
+  .brand{font-size:52px}
+  .skyline{height:180px}
+  .mandi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mandi-grid > .pairing{grid-column:1/-1}
+  .rows{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rows .row:nth-child(even){grid-template-columns:104px minmax(0,1fr)}
+  .rows .row:nth-child(even) .thumb{order:0}
+  .rows .row:nth-child(4n+3),.rows .row:nth-child(4n+4){grid-template-columns:minmax(0,1fr) 104px}
+  .rows .row:nth-child(4n+3) .thumb,.rows .row:nth-child(4n+4) .thumb{order:2}
+  .menu-list{columns:2;column-gap:40px;padding:6px 22px}
+  .li{break-inside:avoid}
+  .li:last-child{border-bottom:1px solid var(--line)}
+  .sheet{align-items:center}
+  .panel{border-radius:28px;max-height:84vh}
+}
+@media (min-width:1100px){
+  .mandi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rows{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rows .row:nth-child(n){grid-template-columns:104px minmax(0,1fr)}
+  .rows .row:nth-child(n) .thumb{order:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}

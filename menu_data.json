@@ -1,0 +1,1345 @@
+{
+  "brand": "Mandi Center",
+  "tagline": "Единственный Манди Центр в Астане",
+  "address": "Астана, ул. Максута Нарикбаева, 5",
+  "hours": "Ежедневно, 11:00–01:00",
+  "links": {
+    "phone": "+77782453572",
+    "whatsapp": "https://api.whatsapp.com/send?phone=77782453572",
+    "instagram": "https://www.instagram.com/mandi_center.kz",
+    "twogis": "https://go.2gis.com/jdbi8"
+  },
+  "hero": "images/hero.jpg",
+  "groups": [
+    {
+      "id": "main",
+      "label": "Основное меню",
+      "thumb": "images/group-main.jpg",
+      "cats": [
+        {
+          "id": "signature",
+          "label": "Фирменное блюдо на компанию",
+          "desc": "Манди — традиционное блюдо из Йемена: ароматный рис, специи и мясо (чаще курица или баранина), томлённое до мягкости. Рис пропитывается мясным соком, блюдо подаётся на большом подносе с соусами.",
+          "cover": "images/cover-main-signature.jpg",
+          "items": [
+            {
+              "key": "0-0-0",
+              "name": "Манди с курицей",
+              "variant": "на одну персону",
+              "desc": "",
+              "price": 3800,
+              "outOfStock": false,
+              "photo": "images/item-0-0-0.jpg"
+            },
+            {
+              "key": "0-0-1",
+              "name": "Манди с курицей",
+              "variant": "на 2 персоны",
+              "desc": "",
+              "price": 7500,
+              "outOfStock": false,
+              "photo": "images/item-0-0-1.jpg"
+            },
+            {
+              "key": "0-0-2",
+              "name": "Манди с курицей",
+              "variant": "на 5 персон",
+              "desc": "",
+              "price": 16000,
+              "outOfStock": false,
+              "photo": "images/item-0-0-2.jpg"
+            },
+            {
+              "key": "0-0-3",
+              "name": "Манди с бараниной",
+              "variant": "на одну персону",
+              "desc": "",
+              "price": 8690,
+              "outOfStock": false,
+              "photo": "images/item-0-0-3.jpg"
+            },
+            {
+              "key": "0-0-4",
+              "name": "Манди с бараниной",
+              "variant": "на 2 персоны",
+              "desc": "",
+              "price": 15290,
+              "outOfStock": false,
+              "photo": "images/item-0-0-4.jpg"
+            },
+            {
+              "key": "0-0-5",
+              "name": "Манди с бараниной",
+              "variant": "на 5 персон",
+              "desc": "",
+              "price": 26290,
+              "outOfStock": false,
+              "photo": "images/item-0-0-5.jpg"
+            },
+            {
+              "key": "0-0-6",
+              "name": "Манди ассорти",
+              "variant": "на 2 персоны",
+              "desc": "",
+              "price": 13530,
+              "outOfStock": false,
+              "photo": "images/item-0-0-6.jpg"
+            },
+            {
+              "key": "0-0-7",
+              "name": "Манди ассорти",
+              "variant": "на 5 персон",
+              "desc": "",
+              "price": 21990,
+              "outOfStock": false,
+              "photo": "images/item-0-0-7.jpg"
+            },
+            {
+              "key": "0-0-8",
+              "name": "Манди Судак BBQ / Фрай",
+              "variant": "",
+              "desc": "",
+              "price": 4000,
+              "outOfStock": false,
+              "photo": "images/item-0-0-8.jpg"
+            },
+            {
+              "key": "0-0-9",
+              "name": "Манди Судак",
+              "variant": "на 2 персоны",
+              "desc": "",
+              "price": 8500,
+              "outOfStock": false,
+              "photo": "images/item-0-0-9.jpg"
+            },
+            {
+              "key": "0-0-10",
+              "name": "Манди с курицей BBQ",
+              "variant": "на 1 персону",
+              "desc": "",
+              "price": 4000,
+              "outOfStock": false,
+              "photo": "images/item-0-0-10.jpg"
+            },
+            {
+              "key": "0-0-11",
+              "name": "Манди с курицей BBQ",
+              "variant": "на 2 персоны",
+              "desc": "",
+              "price": 8500,
+              "outOfStock": false,
+              "photo": "images/item-0-0-11.jpg"
+            },
+            {
+              "key": "0-0-12",
+              "name": "Манди с курицей BBQ",
+              "variant": "на 5 персон",
+              "desc": "",
+              "price": 17000,
+              "outOfStock": false,
+              "photo": "images/item-0-0-12.jpg"
+            }
+          ]
+        },
+        {
+          "id": "main-dishes",
+          "label": "Основные блюда",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-1-0",
+              "name": "Чаппати с курицей в тарелке",
+              "variant": "",
+              "desc": "Курица карри, арабская лепёшка пита, хумус, овощной салат, пряный рис",
+              "price": 3200,
+              "outOfStock": false,
+              "photo": "images/item-0-1-0.jpg"
+            },
+            {
+              "key": "0-1-1",
+              "name": "Курица с грибами под сливочным соусом и пюре",
+              "variant": "",
+              "desc": "Куриное филе, обжаренное с шампиньонами под сливочным соусом, подаётся с пюре",
+              "price": 2800,
+              "outOfStock": false,
+              "photo": "images/item-0-1-1.jpg"
+            },
+            {
+              "key": "0-1-2",
+              "name": "Паста с курицей и грибами",
+              "variant": "",
+              "desc": "Тальятелли/лингвини в сливочном соусе с курицей и обжаренными грибами",
+              "price": 2900,
+              "outOfStock": false,
+              "photo": "images/item-0-1-2.jpg"
+            },
+            {
+              "key": "0-1-3",
+              "name": "Хумус с питой",
+              "variant": "",
+              "desc": "Пюре из нута с кунжутной пастой и оливковым маслом, подаётся с лепёшкой пита",
+              "price": 1900,
+              "outOfStock": false,
+              "photo": "images/item-0-1-3.jpg"
+            }
+          ]
+        },
+        {
+          "id": "fastfood",
+          "label": "Fast food",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-2-0",
+              "name": "Пита с куриным филе и соусом «айоли»",
+              "variant": "",
+              "desc": "Запечённое куриное филе со свежими овощами и соусом тартар",
+              "price": 2500,
+              "outOfStock": false,
+              "photo": "images/item-0-2-0.jpg"
+            },
+            {
+              "key": "0-2-1",
+              "name": "Чапати с курицей",
+              "variant": "",
+              "desc": "Лепёшка из слоёного теста с начинкой из курицы карри",
+              "price": 1800,
+              "outOfStock": false,
+              "photo": "images/item-0-2-1.jpg"
+            },
+            {
+              "key": "0-2-2",
+              "name": "Пита с рваным мясом",
+              "variant": "",
+              "desc": "Говяжье томлёное мясо под соусом барбекю, томаты, огурцы, листья салата",
+              "price": 3190,
+              "outOfStock": false,
+              "photo": "images/item-0-2-2.jpg"
+            },
+            {
+              "key": "0-2-3",
+              "name": "Чапати с яйцом",
+              "variant": "",
+              "desc": "Слоёная лепёшка с начинкой из огурца, помидора, яйца и листьев салата",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": "images/item-0-2-3.jpg"
+            },
+            {
+              "key": "0-2-4",
+              "name": "Кутабы",
+              "variant": "",
+              "desc": "Тесто слоёное, начинка — сыр с зеленью",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": "images/item-0-2-4.jpg"
+            }
+          ]
+        },
+        {
+          "id": "breakfast",
+          "label": "Завтраки",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-3-0",
+              "name": "Каша Тальбина",
+              "variant": "",
+              "desc": "Ячменная каша с финиками и грецким орехом",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": "images/item-0-3-0.jpg"
+            },
+            {
+              "key": "0-3-1",
+              "name": "Каша рисовая с запечённой тыквой",
+              "variant": "",
+              "desc": "",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": "images/item-0-3-1.jpg"
+            },
+            {
+              "key": "0-3-2",
+              "name": "Скрэмбл с хашбрауном",
+              "variant": "",
+              "desc": "",
+              "price": 3500,
+              "outOfStock": false,
+              "photo": "images/item-0-3-2.jpg"
+            },
+            {
+              "key": "0-3-3",
+              "name": "Каша «Пять злаков»",
+              "variant": "",
+              "desc": "",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-3-4",
+              "name": "Деревенский завтрак",
+              "variant": "",
+              "desc": "Натуральные колбаски, крем-чиз, яйца-глазунья, тостовый хлеб, корнишоны",
+              "price": 3500,
+              "outOfStock": false,
+              "photo": "images/item-0-3-4.jpg"
+            },
+            {
+              "key": "0-3-5",
+              "name": "Сэндвич с курицей",
+              "variant": "",
+              "desc": "Варёное яйцо и корнишоны, хрустящее куриное филе в панировке, булочка бриошь",
+              "price": 2500,
+              "outOfStock": false,
+              "photo": "images/item-0-3-5.jpg"
+            }
+          ]
+        },
+        {
+          "id": "soups",
+          "label": "Супы",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-4-0",
+              "name": "Адас (чечевичный суп)",
+              "variant": "",
+              "desc": "Крем-суп из красной чечевицы с насыщенным вкусом",
+              "price": 1600,
+              "outOfStock": false,
+              "photo": "images/item-0-4-0.jpg"
+            }
+          ]
+        },
+        {
+          "id": "salads",
+          "label": "Салаты",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-5-0",
+              "name": "Фатош / Фатуш",
+              "variant": "",
+              "desc": "Свежие овощи, заправка медово-горчичная",
+              "price": 1900,
+              "outOfStock": false,
+              "photo": "images/item-0-5-0.jpg"
+            },
+            {
+              "key": "0-5-1",
+              "name": "Салат с тыквой и свёклой",
+              "variant": "",
+              "desc": "С кремом из феты под медово-горчичным соусом",
+              "price": 2400,
+              "outOfStock": false,
+              "photo": "images/item-0-5-1.jpg"
+            },
+            {
+              "key": "0-5-2",
+              "name": "Свежая нарезка",
+              "variant": "",
+              "desc": "Помидоры, огурцы, кинза, укроп, петрушка, перец, редис, хумус",
+              "price": 2400,
+              "outOfStock": false,
+              "photo": "images/item-0-5-2.jpg"
+            },
+            {
+              "key": "0-5-3",
+              "name": "Салат с цыплёнком и грибами",
+              "variant": "",
+              "desc": "Айсберг, куриное филе и яйцо под соусом айоли с карамелизованными шампиньонами",
+              "price": 2700,
+              "outOfStock": false,
+              "photo": "images/item-0-5-3.jpg"
+            },
+            {
+              "key": "0-5-4",
+              "name": "Салат с баклажанами глейзи и фетой",
+              "variant": "",
+              "desc": "Обжаренный баклажан, свежие овощи, ароматная заправка",
+              "price": 3100,
+              "outOfStock": false,
+              "photo": "images/item-0-5-4.jpg"
+            }
+          ]
+        },
+        {
+          "id": "veryhot",
+          "label": "Very hot",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-6-0",
+              "name": "Butter chicken masala",
+              "variant": "",
+              "desc": "Филе курицы, сливочно-томатный соус со специями, подаётся с рисом",
+              "price": 3600,
+              "outOfStock": false,
+              "photo": "images/item-0-6-0.jpg"
+            }
+          ]
+        },
+        {
+          "id": "sides",
+          "label": "Гарниры",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-7-0",
+              "name": "Рис пряный",
+              "variant": "",
+              "desc": "",
+              "price": 800,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-7-1",
+              "name": "Картофель фри",
+              "variant": "",
+              "desc": "",
+              "price": 950,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-7-2",
+              "name": "Картофель Айдахо",
+              "variant": "",
+              "desc": "",
+              "price": 890,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-7-3",
+              "name": "Картофельное пюре",
+              "variant": "",
+              "desc": "",
+              "price": 600,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "addons",
+          "label": "Допы к Манди",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "0-8-0",
+              "name": "Белый соус",
+              "variant": "",
+              "desc": "",
+              "price": 300,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-1",
+              "name": "Красный соус",
+              "variant": "",
+              "desc": "",
+              "price": 300,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-2",
+              "name": "Судак BBQ",
+              "variant": "",
+              "desc": "",
+              "price": 2175,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-3",
+              "name": "Судак фрай",
+              "variant": "",
+              "desc": "",
+              "price": 2175,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-4",
+              "name": "Курица",
+              "variant": "",
+              "desc": "",
+              "price": 1650,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-5",
+              "name": "Курица BBQ",
+              "variant": "",
+              "desc": "",
+              "price": 2175,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-6",
+              "name": "Баранина",
+              "variant": "",
+              "desc": "",
+              "price": 5900,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "0-8-7",
+              "name": "Пита лепёшка",
+              "variant": "",
+              "desc": "",
+              "price": 490,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar-mandi",
+      "label": "Барное меню Mandi",
+      "thumb": "images/group-bar-mandi.jpg",
+      "cats": [
+        {
+          "id": "signature-tea",
+          "label": "Авторский чай",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-0-0",
+              "name": "Облепиховый чай",
+              "variant": "",
+              "desc": "Облепиха, апельсины, цитрусовое пюре, чёрный чай",
+              "price": 2190,
+              "outOfStock": false,
+              "photo": "images/item-1-0-0.jpg"
+            },
+            {
+              "key": "1-0-1",
+              "name": "Вишнёвый чай с чабрецом",
+              "variant": "",
+              "desc": "",
+              "price": 2190,
+              "outOfStock": false,
+              "photo": "images/item-1-0-1.jpg"
+            },
+            {
+              "key": "1-0-2",
+              "name": "Суданский чай с барбарисом",
+              "variant": "",
+              "desc": "Каркаде, ягодное пюре, барбарис",
+              "price": 2190,
+              "outOfStock": false,
+              "photo": "images/item-1-0-2.jpg"
+            },
+            {
+              "key": "1-0-3",
+              "name": "Цитрусовый чай с маракуйей",
+              "variant": "",
+              "desc": "Цитрусовое пюре, маракуйя, зелёный чай сенча",
+              "price": 2190,
+              "outOfStock": false,
+              "photo": "images/item-1-0-3.jpg"
+            },
+            {
+              "key": "1-0-4",
+              "name": "Марокканский чай",
+              "variant": "",
+              "desc": "Сок лайма, марокканские специи, мёд, зелёный чай сенча",
+              "price": 2190,
+              "outOfStock": false,
+              "photo": "images/item-1-0-4.jpg"
+            },
+            {
+              "key": "1-0-5",
+              "name": "Клюквенный чай с имбирём",
+              "variant": "",
+              "desc": "Клюквенное пюре, имбирь, лимон, чёрный чай",
+              "price": 2190,
+              "outOfStock": false,
+              "photo": "images/item-1-0-5.jpg"
+            }
+          ]
+        },
+        {
+          "id": "signature-tea-03",
+          "label": "Авторский чай 0,3",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-1-0",
+              "name": "Облепиховый чай 0,3",
+              "variant": "",
+              "desc": "",
+              "price": 980,
+              "outOfStock": false,
+              "photo": "images/item-1-1-0.jpg"
+            },
+            {
+              "key": "1-1-1",
+              "name": "Малина-манго 0,3",
+              "variant": "",
+              "desc": "",
+              "price": 980,
+              "outOfStock": false,
+              "photo": "images/item-1-1-1.jpg"
+            },
+            {
+              "key": "1-1-2",
+              "name": "Черника-имбирь",
+              "variant": "",
+              "desc": "",
+              "price": 980,
+              "outOfStock": false,
+              "photo": "images/item-1-1-2.jpg"
+            },
+            {
+              "key": "1-1-3",
+              "name": "Ежевика-гвоздика",
+              "variant": "",
+              "desc": "",
+              "price": 980,
+              "outOfStock": false,
+              "photo": "images/item-1-1-3.jpg"
+            },
+            {
+              "key": "1-1-4",
+              "name": "Груша-чабрец",
+              "variant": "",
+              "desc": "",
+              "price": 980,
+              "outOfStock": false,
+              "photo": "images/item-1-1-4.jpg"
+            }
+          ]
+        },
+        {
+          "id": "coffee-classic",
+          "label": "Кофейная классика",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-2-0",
+              "name": "Эспрессо",
+              "variant": "",
+              "desc": "Крепкий кофейный напиток с балансом горечи и кислотности",
+              "price": 590,
+              "outOfStock": false,
+              "photo": "images/item-1-2-0.jpg"
+            },
+            {
+              "key": "1-2-1",
+              "name": "Капучино",
+              "variant": "S",
+              "desc": "На основе эспрессо, с плотной молочной пеной",
+              "price": 980,
+              "outOfStock": false,
+              "photo": "images/item-1-2-1.jpg"
+            },
+            {
+              "key": "1-2-2",
+              "name": "Капучино",
+              "variant": "M",
+              "desc": "На основе эспрессо, с плотной молочной пеной",
+              "price": 1290,
+              "outOfStock": false,
+              "photo": "images/item-1-2-2.jpg"
+            },
+            {
+              "key": "1-2-3",
+              "name": "Американо",
+              "variant": "S",
+              "desc": "Двойной эспрессо с горячей водой",
+              "price": 890,
+              "outOfStock": false,
+              "photo": "images/item-1-2-3.jpg"
+            },
+            {
+              "key": "1-2-4",
+              "name": "Американо",
+              "variant": "M",
+              "desc": "Двойной эспрессо с горячей водой",
+              "price": 990,
+              "outOfStock": false,
+              "photo": "images/item-1-2-4.jpg"
+            },
+            {
+              "key": "1-2-5",
+              "name": "Латте",
+              "variant": "M",
+              "desc": "Эспрессо и подогретое молоко",
+              "price": 1290,
+              "outOfStock": false,
+              "photo": "images/item-1-2-5.jpg"
+            },
+            {
+              "key": "1-2-6",
+              "name": "Флэт Уайт",
+              "variant": "",
+              "desc": "Двойной эспрессо и подогретое молоко",
+              "price": 1390,
+              "outOfStock": false,
+              "photo": "images/item-1-2-6.jpg"
+            },
+            {
+              "key": "1-2-7",
+              "name": "Раф кофе",
+              "variant": "",
+              "desc": "Эспрессо и сливки 10% жирности",
+              "price": 1690,
+              "outOfStock": false,
+              "photo": "images/item-1-2-7.jpg"
+            }
+          ]
+        },
+        {
+          "id": "not-coffee",
+          "label": "Не кофе",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-3-0",
+              "name": "Айс матча манго",
+              "variant": "0,4",
+              "desc": "Молочный напиток на манговом пюре и зелёной матче",
+              "price": 1690,
+              "outOfStock": false,
+              "photo": "images/item-1-3-0.jpg"
+            },
+            {
+              "key": "1-3-1",
+              "name": "Апельсиновый фреш",
+              "variant": "0,25",
+              "desc": "Свежевыжатый апельсиновый сок",
+              "price": 2100,
+              "outOfStock": false,
+              "photo": "images/item-1-3-1.jpg"
+            },
+            {
+              "key": "1-3-2",
+              "name": "Тайский ice tea",
+              "variant": "0,4",
+              "desc": "Тайский чай Анчан и апельсиновое пюре",
+              "price": 1390,
+              "outOfStock": false,
+              "photo": "images/item-1-3-2.jpg"
+            },
+            {
+              "key": "1-3-3",
+              "name": "Цитрусовый ice tea",
+              "variant": "0,4",
+              "desc": "Цитрусовое пюре и чай эрл грей",
+              "price": 1190,
+              "outOfStock": false,
+              "photo": "images/item-1-3-3.jpg"
+            },
+            {
+              "key": "1-3-4",
+              "name": "Ice blue матча карамель",
+              "variant": "0,4",
+              "desc": "Голубая матча с карамелью",
+              "price": 1690,
+              "outOfStock": false,
+              "photo": "images/item-1-3-4.jpg"
+            },
+            {
+              "key": "1-3-5",
+              "name": "Ice tea жасмин-клубника",
+              "variant": "0,4",
+              "desc": "",
+              "price": 1190,
+              "outOfStock": false,
+              "photo": "images/item-1-3-5.jpg"
+            },
+            {
+              "key": "1-3-6",
+              "name": "Морс ягодный",
+              "variant": "1 л",
+              "desc": "Микс ягод клюквы и ежевики",
+              "price": 1890,
+              "outOfStock": false,
+              "photo": "images/item-1-3-6.jpg"
+            },
+            {
+              "key": "1-3-7",
+              "name": "Какао",
+              "variant": "",
+              "desc": "",
+              "price": 900,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-3-8",
+              "name": "Ежевичный ice tea",
+              "variant": "0,4",
+              "desc": "",
+              "price": 1290,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-3-9",
+              "name": "Домашний лимонад",
+              "variant": "0,3, натуральный без газа",
+              "desc": "",
+              "price": 700,
+              "outOfStock": false,
+              "photo": "images/item-1-3-9.jpg"
+            },
+            {
+              "key": "1-3-10",
+              "name": "Домашний лимонад",
+              "variant": "0,5, натуральный без газа",
+              "desc": "",
+              "price": 1200,
+              "outOfStock": false,
+              "photo": "images/item-1-3-10.jpg"
+            },
+            {
+              "key": "1-3-11",
+              "name": "Домашний лимонад",
+              "variant": "1 л, натуральный без газа",
+              "desc": "",
+              "price": 2400,
+              "outOfStock": false,
+              "photo": "images/item-1-3-11.jpg"
+            }
+          ]
+        },
+        {
+          "id": "lemonades",
+          "label": "Фирменные лимонады",
+          "desc": "",
+          "cover": "images/cover-bar-mandi-lemonades.jpg",
+          "items": [
+            {
+              "key": "1-4-0",
+              "name": "Клубничный лимонад",
+              "variant": "1 л",
+              "desc": "Клубничное и грушевое пюре",
+              "price": 2790,
+              "outOfStock": false,
+              "photo": "images/item-1-4-0.jpg"
+            },
+            {
+              "key": "1-4-1",
+              "name": "Клубничный лимонад",
+              "variant": "0,5",
+              "desc": "",
+              "price": 1390,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-4-2",
+              "name": "Ягодный микс",
+              "variant": "1 л",
+              "desc": "Пюре клюквы и ежевики",
+              "price": 2790,
+              "outOfStock": false,
+              "photo": "images/item-1-4-2.jpg"
+            },
+            {
+              "key": "1-4-3",
+              "name": "Ягодный микс",
+              "variant": "0,5",
+              "desc": "",
+              "price": 1390,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-4-4",
+              "name": "Грушевый лимонад",
+              "variant": "1 л",
+              "desc": "Грушевое и манговое пюре",
+              "price": 2790,
+              "outOfStock": false,
+              "photo": "images/item-1-4-4.jpg"
+            },
+            {
+              "key": "1-4-5",
+              "name": "Грушевый лимонад",
+              "variant": "0,5",
+              "desc": "",
+              "price": 1390,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-4-6",
+              "name": "Цитрусовый лимонад",
+              "variant": "1 л",
+              "desc": "Апельсиновое пюре и свежие цитрусы",
+              "price": 2790,
+              "outOfStock": false,
+              "photo": "images/item-1-4-6.jpg"
+            },
+            {
+              "key": "1-4-7",
+              "name": "Цитрусовый лимонад",
+              "variant": "0,5",
+              "desc": "",
+              "price": 1390,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-4-8",
+              "name": "Лимонад киви-алоэ",
+              "variant": "0,5",
+              "desc": "Сладость и кислинка киви с лёгкой сладостью алоэ",
+              "price": 1590,
+              "outOfStock": false,
+              "photo": "images/item-1-4-8.jpg"
+            },
+            {
+              "key": "1-4-9",
+              "name": "Лимонад киви-алоэ",
+              "variant": "1 л",
+              "desc": "",
+              "price": 2990,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "leaf-tea",
+          "label": "Листовой чай",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-5-0",
+              "name": "Молочный улун",
+              "variant": "",
+              "desc": "",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-5-1",
+              "name": "Те гуань инь",
+              "variant": "",
+              "desc": "",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-5-2",
+              "name": "Эрл грей",
+              "variant": "",
+              "desc": "",
+              "price": 1500,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-5-3",
+              "name": "Ассам",
+              "variant": "",
+              "desc": "Классический чёрный чай",
+              "price": 1200,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-5-4",
+              "name": "Тары чай",
+              "variant": "",
+              "desc": "",
+              "price": 2400,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "smoothies",
+          "label": "Смузи / милкшейки",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-6-0",
+              "name": "Черничный смузи",
+              "variant": "0,4",
+              "desc": "Ягоды черники, банан и черничное пюре",
+              "price": 1990,
+              "outOfStock": false,
+              "photo": "images/item-1-6-0.jpg"
+            },
+            {
+              "key": "1-6-1",
+              "name": "Ягодный смузи",
+              "variant": "0,4",
+              "desc": "Ягодное пюре и ягоды",
+              "price": 1990,
+              "outOfStock": false,
+              "photo": "images/item-1-6-1.jpg"
+            },
+            {
+              "key": "1-6-2",
+              "name": "Ванильный милкшейк",
+              "variant": "0,3",
+              "desc": "Сливочное мороженое, молоко, взбитые сливки",
+              "price": 1590,
+              "outOfStock": false,
+              "photo": "images/item-1-6-2.jpg"
+            },
+            {
+              "key": "1-6-3",
+              "name": "Клубничный милкшейк",
+              "variant": "0,3",
+              "desc": "Клубничное мороженое, молоко, взбитые сливки",
+              "price": 1590,
+              "outOfStock": false,
+              "photo": "images/item-1-6-3.jpg"
+            },
+            {
+              "key": "1-6-4",
+              "name": "Смузи киви-финики",
+              "variant": "0,3",
+              "desc": "Свежие финики и киви",
+              "price": 1990,
+              "outOfStock": false,
+              "photo": "images/item-1-6-4.jpg"
+            },
+            {
+              "key": "1-6-5",
+              "name": "Финиковый милкшейк",
+              "variant": "",
+              "desc": "",
+              "price": 1900,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "ice-coffee",
+          "label": "Ice coffee",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-7-0",
+              "name": "Айс латте",
+              "variant": "0,3",
+              "desc": "Эспрессо и молоко",
+              "price": 1490,
+              "outOfStock": false,
+              "photo": "images/item-1-7-0.jpg"
+            },
+            {
+              "key": "1-7-1",
+              "name": "Айс капучино",
+              "variant": "0,3",
+              "desc": "Двойной эспрессо и молоко",
+              "price": 1490,
+              "outOfStock": false,
+              "photo": "images/item-1-7-1.jpg"
+            },
+            {
+              "key": "1-7-2",
+              "name": "Бамбл кофе",
+              "variant": "0,3",
+              "desc": "Апельсиновый фреш и двойной эспрессо",
+              "price": 2700,
+              "outOfStock": false,
+              "photo": "images/item-1-7-2.jpg"
+            },
+            {
+              "key": "1-7-3",
+              "name": "Колд макадамия",
+              "variant": "0,3",
+              "desc": "",
+              "price": 1590,
+              "outOfStock": false,
+              "photo": "images/item-1-7-3.jpg"
+            }
+          ]
+        },
+        {
+          "id": "refreshers",
+          "label": "Освежающие напитки",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-8-0",
+              "name": "Мекка cola",
+              "variant": "",
+              "desc": "Арабская классика — глубокий вкус традиционной колы",
+              "price": 1050,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-8-1",
+              "name": "Milaf cola",
+              "variant": "",
+              "desc": "На основе фиников — насыщенный вкус с карамельными нотками",
+              "price": 1050,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-8-2",
+              "name": "Kinza в ассортименте",
+              "variant": "",
+              "desc": "Лимонно-лаймовый арабский напиток",
+              "price": 1050,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "tonic",
+          "label": "Тоник",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "1-9-0",
+              "name": "Малиновый тоник",
+              "variant": "",
+              "desc": "",
+              "price": 2280,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-9-1",
+              "name": "Цитрусовый тоник",
+              "variant": "",
+              "desc": "",
+              "price": 2280,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-9-2",
+              "name": "Ягодный тоник",
+              "variant": "",
+              "desc": "",
+              "price": 2280,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-9-3",
+              "name": "Батч-брю тоник",
+              "variant": "",
+              "desc": "",
+              "price": 2280,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "1-9-4",
+              "name": "Швепс",
+              "variant": "",
+              "desc": "",
+              "price": 1200,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar-karak",
+      "label": "Барное меню Karak",
+      "thumb": "images/group-bar-karak.jpg",
+      "cats": [
+        {
+          "id": "karak-tea",
+          "label": "Чаи",
+          "desc": "",
+          "cover": "images/cover-bar-karak-karak-tea.jpg",
+          "items": [
+            {
+              "key": "2-0-0",
+              "name": "Фирменный карак чай",
+              "variant": "на компанию",
+              "desc": "",
+              "price": 3800,
+              "outOfStock": false,
+              "photo": "images/item-2-0-0.jpg"
+            },
+            {
+              "key": "2-0-1",
+              "name": "Магриби",
+              "variant": "S",
+              "desc": "",
+              "price": 850,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "2-0-2",
+              "name": "Магриби",
+              "variant": "M",
+              "desc": "",
+              "price": 1050,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "2-0-3",
+              "name": "Фирменный карак чай",
+              "variant": "M",
+              "desc": "",
+              "price": 1250,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "2-0-4",
+              "name": "Фирменный карак чай",
+              "variant": "S",
+              "desc": "",
+              "price": 950,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "label": "Десерты",
+      "thumb": "",
+      "cats": [
+        {
+          "id": "showcase",
+          "label": "Десерты с витрины",
+          "desc": "",
+          "cover": "",
+          "items": [
+            {
+              "key": "3-0-0",
+              "name": "Финики в шоколаде",
+              "variant": "",
+              "desc": "",
+              "price": 800,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-1",
+              "name": "Чизкейк испанский",
+              "variant": "",
+              "desc": "",
+              "price": 2000,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-2",
+              "name": "Фисташковый рулет",
+              "variant": "",
+              "desc": "",
+              "price": 2500,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-3",
+              "name": "Чизкейк тары",
+              "variant": "",
+              "desc": "",
+              "price": 2000,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-4",
+              "name": "Наполеон",
+              "variant": "",
+              "desc": "",
+              "price": 2200,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-5",
+              "name": "Медовик",
+              "variant": "",
+              "desc": "",
+              "price": 1900,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-6",
+              "name": "Орешек со сгущёнкой",
+              "variant": "",
+              "desc": "",
+              "price": 350,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-7",
+              "name": "Вафельная трубочка с варёной сгущёнкой",
+              "variant": "",
+              "desc": "",
+              "price": null,
+              "outOfStock": true,
+              "photo": ""
+            },
+            {
+              "key": "3-0-8",
+              "name": "Чайное ассорти из орехов и сухофруктов",
+              "variant": "",
+              "desc": "",
+              "price": 3000,
+              "outOfStock": false,
+              "photo": ""
+            },
+            {
+              "key": "3-0-9",
+              "name": "Жент",
+              "variant": "",
+              "desc": "",
+              "price": 350,
+              "outOfStock": false,
+              "photo": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

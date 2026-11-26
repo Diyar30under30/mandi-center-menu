@@ -1,0 +1,8 @@
+# Локальные настройки Claude и Vercel
+.claude/
+.vercel/
+# Архив для Claude Design — собирается из menu_improved.json и images/
+for_claude_design.zip
+node_modules/
+.DS_Store
+Thumbs.db
