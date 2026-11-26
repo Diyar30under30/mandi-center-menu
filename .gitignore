@@ -6,3 +6,6 @@ for_claude_design.zip
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Варианты дизайна — у каждого свой репозиторий
+variants/
