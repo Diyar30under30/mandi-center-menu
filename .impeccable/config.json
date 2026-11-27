@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "menu_original.html"
+        ],
+        "createdAt": "2026-11-27T07:30:25.226Z",
+        "reason": "Claude: verbatim reference copy of the old menu for price/text checks, not a shipped page"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "menu_original.html"
+        ],
+        "createdAt": "2026-11-27T07:30:25.420Z",
+        "reason": "Claude: verbatim reference copy of the old menu for price/text checks, not a shipped page"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "design-v2/build.js"
+        ],
+        "createdAt": "2026-11-27T09:26:20.865Z",
+        "reason": "Claude: build script of the earlier «Сана» version, kept for history; not part of the «Карак» system"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "menu_original.html"
+        ],
+        "createdAt": "2026-11-27T09:26:21.114Z",
+        "reason": "Claude: verbatim reference copy of the old menu, not a shipped page"
+      }
+    ]
+  }
+}

@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mandi Center — дизайн-система «Карак»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+/* Только для стайлгайда. Тоже строго на токенах. */
+body { padding-bottom: var(--space-20); }
+.sg-head { border-bottom: var(--border-hair) solid var(--color-border); }
+.sg-head__in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-6); }
+.sg-head__title { display: grid; gap: var(--space-1); }
+.sg-tools { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.sg-section { padding-block: var(--space-16) 0; }
+.sg-section > .container > .t-h1 { margin-bottom: var(--space-2); }
+.sg-section > .container > .t-meta { margin-bottom: var(--space-8); max-width: var(--measure); }
+.sg-sub { margin: var(--space-10) 0 var(--space-4); }
+.sg-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.sg-caption { margin-top: var(--space-2); }
+.sg-stack { display: grid; gap: var(--space-6); }
+
+/* Цвета */
+.sg-themes { display: grid; gap: var(--space-6); }
+@media (min-width: 1024px) { .sg-themes { grid-template-columns: 1fr 1fr; } }
+.sg-theme { border-radius: var(--radius-md); border: var(--border-hair) solid var(--color-border); padding: var(--space-6) var(--space-5); }
+.sg-theme > .t-h2 { margin-bottom: var(--space-4); }
+.sg-swatches { display: grid; gap: var(--space-1); list-style: none; margin: 0; padding: 0; }
+.sg-swatch { display: grid; grid-template-columns: var(--control-h) minmax(0, 1fr) auto; align-items: center; gap: var(--space-3); padding-block: var(--space-2); border-bottom: var(--border-hair) solid var(--color-border); }
+.sg-chip { width: var(--control-h); height: var(--control-h); border-radius: var(--radius-sm); border: var(--border-hair) solid var(--color-border-strong); }
+.sg-swatch__name { display: grid; gap: var(--space-1); min-width: 0; }
+.sg-swatch__token { font: var(--weight-medium) var(--text-sm) / 1 var(--font-sans); }
+.sg-swatch__ratio { font: var(--weight-medium) var(--text-sm) / 1 var(--font-sans); font-variant-numeric: lining-nums tabular-nums; text-align: right; }
+.sg-pass { color: var(--color-success); }
+
+/* Типографика */
+.sg-type { display: grid; gap: var(--space-2); padding-block: var(--space-5); border-bottom: var(--border-hair) solid var(--color-border); }
+@media (min-width: 768px) { .sg-type { grid-template-columns: calc(var(--space-20) * 3) minmax(0, 1fr); gap: var(--space-6); align-items: baseline; } }
+.sg-type__spec { display: grid; gap: var(--space-1); }
+
+/* Отступы, радиусы, тени */
+.sg-space { display: grid; grid-template-columns: calc(var(--space-20) + var(--space-4)) minmax(0, 1fr); align-items: center; gap: var(--space-4); padding-block: var(--space-1); }
+.sg-space__bar { height: var(--space-4); background: var(--color-accent); border-radius: var(--radius-xs); }
+.sg-shapes { display: flex; flex-wrap: wrap; gap: var(--space-6); }
+.sg-shape { width: calc(var(--space-20) + var(--space-8)); height: calc(var(--space-20) + var(--space-8)); background: var(--color-surface-raised); border: var(--border-hair) solid var(--color-border-strong); display: grid; place-items: end start; padding: var(--space-3); }
+.sg-shadow { width: calc(var(--space-20) * 2); height: var(--space-20); background: var(--color-surface); border-radius: var(--radius-md); display: grid; place-items: end start; padding: var(--space-3); }
+
+/* Сетка */
+.sg-grid-demo { position: relative; padding-block: var(--space-6); }
+.sg-grid-demo .grid > div { height: var(--space-20); background: var(--color-surface-raised); border-radius: var(--radius-xs); display: grid; place-items: center; grid-column: span 1; }
+.sg-grid-demo .grid > .sg-span { margin-top: var(--space-3); height: var(--space-12); background: var(--color-surface); border: var(--border-hair) solid var(--color-border-strong); place-items: center start; padding: var(--space-2) var(--space-3); }
+.sg-table { width: 100%; border-collapse: collapse; font: var(--weight-regular) var(--text-sm) / var(--leading-normal) var(--font-sans); }
+.sg-table th, .sg-table td { text-align: left; padding: var(--space-3) var(--space-3) var(--space-3) 0; border-bottom: var(--border-hair) solid var(--color-border); vertical-align: top; }
+.sg-table th { font-weight: var(--weight-semibold); color: var(--color-text-muted); }
+.sg-table-wrap { overflow-x: auto; }
+.sg-overlay { position: fixed; inset: 0; pointer-events: none; z-index: var(--z-toast); display: none; }
+.sg-overlay.is-on { display: block; }
+.sg-overlay .grid { height: 100%; }
+.sg-overlay .grid > div { grid-column: span 1; background: var(--color-accent); opacity: 0.12; }
+
+/* Демонстрационные состояния */
+.field__control.is-focused { border-color: var(--color-accent); box-shadow: 0 0 0 var(--border-hair) var(--color-accent); }
+.is-hover.btn--primary { background: var(--color-accent-hover); }
+.is-hover.btn--secondary { border-color: var(--color-text); }
+.is-focus { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--focus-offset); }
+.sg-frame { border: var(--border-hair) solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; }
+.sg-frame .container { padding-inline: var(--space-5); }
+.sg-menu-demo { display: grid; gap: var(--space-5); max-width: calc(var(--space-20) * 7); }
+.sg-line-desc { margin-top: var(--space-1); }
+</style>
+</head>
+<body>
+
+<div class="sg-overlay" id="overlay" aria-hidden="true"><div class="container" style="height:100%"><div class="grid">
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</div></div></div>
+
+<header class="sg-head">
+  <div class="container sg-head__in">
+    <div class="sg-head__title">
+      <span class="wordmark">Mandi Center</span>
+      <p class="t-meta">Дизайн-система «Карак» · вечернее меню чайной · токены в tokens.css, компоненты в components.css</p>
+    </div>
+    <div class="sg-tools" role="group" aria-label="Просмотр">
+      <button class="btn btn--secondary" id="theme-toggle" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span>Светлая тема</span>
+      </button>
+      <button class="btn btn--secondary" id="grid-toggle" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16M9 4v16M15 4v16M20 4v16"/></svg>
+        <span>Сетка 12 колонок</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ЦВЕТА -->
+<section class="sg-section" aria-labelledby="h-colors">
+  <div class="container">
+    <h2 class="t-h1" id="h-colors">Цвета</h2>
+    <p class="t-meta">Графит и сталь от стального чайника, молоко и карамель от карака. Один акцент. Текст всегда нейтральный на нейтральном фоне; на заливке акцента — графит или белый. Цифры контраста считаются прямо на странице по WCAG.</p>
+    <div class="sg-themes">
+      <div class="sg-theme" data-theme="dark"><h3 class="t-h2">Тёмная (по умолчанию)</h3><ul class="sg-swatches" data-swatches></ul></div>
+      <div class="sg-theme" data-theme="light"><h3 class="t-h2">Светлая</h3><ul class="sg-swatches" data-swatches></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ТИПОГРАФИКА -->
+<section class="sg-section" aria-labelledby="h-type">
+  <div class="container">
+    <h2 class="t-h1" id="h-type">Шрифты и шкала</h2>
+    <p class="t-meta">Spectral — названия и описания, как в печатном меню. IBM Plex Sans — интерфейс и все цены (цифры одной ширины, чтобы суммы стояли столбиком). В обоих есть казахские буквы и знак ₸. Базовый размер 17px, шаг шкалы около 1,2.</p>
+
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">display · Spectral 600</span><span class="t-meta">40→56px / 1.1</span></div><p class="t-display">Манди</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">dish-lg · Spectral 600</span><span class="t-meta">36px / 1.1</span></div><p class="t-dish-lg">Манди с бараниной</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">h1 · Spectral 600</span><span class="t-meta">30px / 1.25</span></div><p class="t-h1">Лимонады и морсы</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">h2 · Spectral 500</span><span class="t-meta">24px / 1.25</span></div><p class="t-h2">С манди берут</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">dish · Spectral 500</span><span class="t-meta">20px / 1.25</span></div><p class="t-dish">Салат с глазированным баклажаном и фетой</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">numeral · Spectral 500</span><span class="t-meta">44px / 1</span></div><p class="t-numeral">1 2 5</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">desc · Spectral italic 400</span><span class="t-meta">17px / 1.5</span></div><p class="t-desc">Баранина, томлённая до мягкости, на ароматном рисе со специями, пропитанном мясным соком</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">body · Plex Sans 400</span><span class="t-meta">17px / 1.5 · до 68 знаков</span></div><p class="t-body">Список хранится только на этом телефоне и никуда не отправляется. Когда будете готовы, покажите его официанту.</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">price-lg · Plex Sans 600</span><span class="t-meta">24px / 1.3 · tabular</span></div><p class="t-price-lg">15&nbsp;290&nbsp;₸</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">price · Plex Sans 500</span><span class="t-meta">18px / 1.3 · tabular</span></div><p class="t-price">1&nbsp;900&nbsp;₸ · 2&nbsp;400&nbsp;₸ · 21&nbsp;990&nbsp;₸</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">meta · Plex Sans 400</span><span class="t-meta">15px / 1.5</span></div><p class="t-meta">Арабская (йеменская) кухня · Халяльная кухня</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">label · Plex Sans 500</span><span class="t-meta">14px / 1.25 · +0.04em</span></div><p class="t-label">за персону — 3&nbsp;750&nbsp;₸</p></div>
+    <div class="sg-type"><div class="sg-type__spec"><span class="t-label">казахский</span><span class="t-meta">проверка букв</span></div><p class="t-dish">Қой етімен манди — Әйел, Ғалым, Ңң, Өөр, Ұлы, Үй, Һһ, Іі — 8&nbsp;690&nbsp;₸</p></div>
+  </div>
+</section>
+
+<!-- ОТСТУПЫ, РАДИУСЫ, ТЕНИ -->
+<section class="sg-section" aria-labelledby="h-space">
+  <div class="container">
+    <h2 class="t-h1" id="h-space">Отступы, радиусы, тени</h2>
+    <p class="t-meta">Все отступы кратны 4px. Внутри группы — 4–12px, между блоками — 24–48px, перед заголовком раздела больше, чем после него.</p>
+    <div class="grid">
+      <div class="lg-6" data-spaces></div>
+      <div class="lg-6 sg-stack">
+        <div>
+          <h3 class="t-h2 sg-sub">Радиусы</h3>
+          <div class="sg-shapes">
+            <div class="sg-shape" style="border-radius:var(--radius-xs)"><span class="t-label">xs 2 · бейдж</span></div>
+            <div class="sg-shape" style="border-radius:var(--radius-sm)"><span class="t-label">sm 4 · кнопки</span></div>
+            <div class="sg-shape" style="border-radius:var(--radius-md)"><span class="t-label">md 8 · панели</span></div>
+            <div class="sg-shape" style="border-radius:var(--radius-lg) var(--radius-lg) 0 0"><span class="t-label">lg 16 · шторка</span></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="t-h2 sg-sub">Тени</h3>
+          <p class="t-meta">Глубина в основном тоном поверхности. Тень — только у того, что лежит поверх меню: полоса «Мой список», шторка, уведомление.</p>
+          <div class="sg-shapes" style="margin-top:var(--space-6)">
+            <div class="sg-shadow" style="box-shadow:var(--shadow-sm)"><span class="t-label">shadow-sm</span></div>
+            <div class="sg-shadow" style="box-shadow:var(--shadow-md)"><span class="t-label">shadow-md</span></div>
+            <div class="sg-shadow" style="box-shadow:var(--shadow-bar)"><span class="t-label">shadow-bar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- СЕТКА -->
+<section class="sg-section" aria-labelledby="h-grid">
+  <div class="container">
+    <h2 class="t-h1" id="h-grid">Сетка</h2>
+    <p class="t-meta">12 колонок на всех ширинах, меняются поля и промежутки. Меню собирается от телефона: на 390 всё в одну колонку, на 1024 — разворот в две колонки, как печатное меню. Включите «Сетка 12 колонок» вверху, чтобы увидеть её поверх страницы.</p>
+    <div class="sg-grid-demo">
+      <div class="grid" aria-hidden="true">
+        <div><span class="t-label">1</span></div><div><span class="t-label">2</span></div><div><span class="t-label">3</span></div><div><span class="t-label">4</span></div><div><span class="t-label">5</span></div><div><span class="t-label">6</span></div><div><span class="t-label">7</span></div><div><span class="t-label">8</span></div><div><span class="t-label">9</span></div><div><span class="t-label">10</span></div><div><span class="t-label">11</span></div><div><span class="t-label">12</span></div>
+        <div class="sg-span" style="grid-column:span 5"><span class="t-label">5 · фото манди, «Сколько вас?»</span></div>
+        <div class="sg-span" style="grid-column:span 7"><span class="t-label">7 · блюда манди</span></div>
+        <div class="sg-span" style="grid-column:span 6"><span class="t-label">6 · Кухня</span></div>
+        <div class="sg-span" style="grid-column:span 6"><span class="t-label">6 · Напитки и десерты</span></div>
+      </div>
+    </div>
+    <div class="sg-table-wrap">
+      <table class="sg-table">
+        <thead><tr><th>Ширина</th><th>Поля</th><th>Промежуток</th><th>Как раскладывается меню</th></tr></thead>
+        <tbody>
+          <tr><td>до 389 (360)</td><td>16</td><td>12</td><td>Одна колонка, всё на 12 колонок</td></tr>
+          <tr><td>390</td><td>20</td><td>12</td><td>Одна колонка. Цифры порций 1 · 2 · 5 — по 4 колонки каждая</td></tr>
+          <tr><td>768</td><td>32</td><td>16</td><td>Одна колонка текста до 68 знаков; фото манди и «Сколько вас?» рядом (6 + 6)</td></tr>
+          <tr><td>1024</td><td>40</td><td>24</td><td>Манди: фото и выбор слева (5), блюда справа (7). Прайс-лист — разворот 6 + 6</td></tr>
+          <tr><td>1440</td><td>120, контейнер 1200</td><td>24</td><td>Как на 1024, но шире воздух по краям; длина строки ограничена</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- КНОПКИ И ССЫЛКИ -->
+<section class="sg-section" aria-labelledby="h-btn">
+  <div class="container">
+    <h2 class="t-h1" id="h-btn">Кнопки и ссылки</h2>
+    <p class="t-meta">Одна главная кнопка на экран — «Открыть» в полосе списка или «Показать официанту» в шторке. Остальные действия тихие. Все зоны нажатия не меньше 44×44.</p>
+
+    <h3 class="t-h2 sg-sub">Главная</h3>
+    <div class="sg-row">
+      <button class="btn btn--primary" type="button">Открыть</button>
+      <button class="btn btn--primary is-hover" type="button">Наведение</button>
+      <button class="btn btn--primary is-focus" type="button">Фокус</button>
+      <button class="btn btn--primary btn--lg" type="button">Показать официанту</button>
+      <button class="btn btn--primary" type="button" disabled>Недоступно</button>
+    </div>
+
+    <h3 class="t-h2 sg-sub">Второстепенная и текстовая</h3>
+    <div class="sg-row">
+      <button class="btn btn--secondary" type="button">Очистить</button>
+      <button class="btn btn--secondary is-hover" type="button">Наведение</button>
+      <button class="btn btn--ghost" type="button">Позвонить</button>
+      <button class="text-btn" type="button" aria-expanded="false">Фото <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="text-btn" type="button" aria-expanded="true">Фото <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+    </div>
+
+    <h3 class="t-h2 sg-sub">Иконки и «+»</h3>
+    <div class="sg-row">
+      <button class="icon-btn" type="button" aria-label="Поиск по меню"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+      <button class="icon-btn" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <button class="add" type="button" aria-label="В список" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></button>
+      <button class="add" type="button" aria-label="Уже в списке" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9"/></svg></button>
+      <button class="add" type="button" aria-label="Нет в наличии" disabled><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></button>
+    </div>
+    <p class="t-meta sg-caption">«+», добавлено, нет в наличии</p>
+
+    <h3 class="t-h2 sg-sub">Ссылки</h3>
+    <p class="t-body">Адрес на <a class="link" href="#h-btn">2ГИС</a>, а о составе блюд и аллергенах спросите <a class="link" href="#h-btn">официанта</a>.</p>
+  </div>
+</section>
+
+<!-- ПАНЕЛИ И ПОЛЯ -->
+<section class="sg-section" aria-labelledby="h-forms">
+  <div class="container">
+    <h2 class="t-h1" id="h-forms">Панели и поля</h2>
+    <p class="t-meta">Панель — для отдельных блоков, а не для каждой позиции: «Сколько вас?», «С манди берут», «О ресторане», шторка. Панели не вкладываются друг в друга.</p>
+    <div class="grid" style="row-gap:var(--space-6)">
+      <div class="lg-6">
+        <div class="panel">
+          <h3 class="t-h2">О ресторане</h3>
+          <p class="t-body" style="margin-top:var(--space-3)">Арабская (йеменская) кухня. Халяльная кухня.</p>
+          <p class="t-meta" style="margin-top:var(--space-1)">Астана, ул. Максута Нарикбаева, 5 · Ежедневно, 11:00–01:00</p>
+          <div class="sg-row" style="margin-top:var(--space-5);gap:var(--space-2)">
+            <a class="btn btn--primary" href="#h-forms">Позвонить</a>
+            <a class="btn btn--secondary" href="#h-forms">WhatsApp</a>
+            <a class="btn btn--secondary" href="#h-forms">2ГИС</a>
+          </div>
+        </div>
+      </div>
+      <div class="lg-6 sg-stack">
+        <div class="field">
+          <label class="field__label" for="q1">Поиск по меню</label>
+          <div class="field__control"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="q1" type="search" placeholder="Блюдо или напиток"></div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="q2">В фокусе</label>
+          <div class="field__control is-focused"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="q2" type="search" value="карак"></div>
+          <p class="field__hint">Найдено: Фирменный карак чай, Магриби</p>
+        </div>
+        <div class="field field--error">
+          <label class="field__label" for="q3">Ничего не нашлось</label>
+          <div class="field__control"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="q3" type="search" value="пицца" aria-describedby="q3e" aria-invalid="true"></div>
+          <p class="field__error" id="q3e"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.2v.1"/></svg>Ничего не нашлось. Попробуйте другое слово.</p>
+        </div>
+        <div class="field field--disabled">
+          <label class="field__label" for="q4">Недоступно</label>
+          <div class="field__control"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="q4" type="search" placeholder="Поиск выключен" disabled></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- НАВИГАЦИЯ -->
+<section class="sg-section" aria-labelledby="h-nav">
+  <div class="container">
+    <h2 class="t-h1" id="h-nav">Навигация</h2>
+    <p class="t-meta">Верхняя полоса, липкие разделы с категориями и нижняя полоса «Мой список». Текущий раздел — подчёркивание цветом карака, текущая категория — рамка.</p>
+    <div class="sg-frame">
+      <div class="container">
+        <div class="topbar">
+          <a class="wordmark" href="#h-nav">Mandi Center</a>
+          <div class="topbar__tools">
+            <nav class="lang" aria-label="Язык"><a class="lang__btn" href="#h-nav" aria-current="true">РУС</a><span class="lang__sep" aria-hidden="true"></span><a class="lang__btn" href="#h-nav" lang="kk">ҚАЗ</a></nav>
+            <button class="icon-btn" type="button" aria-label="Поиск по меню"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="nav" style="position:relative">
+        <div class="container">
+          <div class="tabs"><a class="tab" href="#h-nav" aria-current="true">Кухня</a><a class="tab" href="#h-nav">Напитки</a><a class="tab" href="#h-nav">Десерты</a></div>
+          <div class="chips"><a class="chip" href="#h-nav" aria-current="true">Манди</a><a class="chip" href="#h-nav">Допы к манди</a><a class="chip" href="#h-nav">Горячее</a><a class="chip" href="#h-nav">Супы и закуски</a><a class="chip" href="#h-nav">Салаты</a><a class="chip" href="#h-nav">Гарниры</a><a class="chip" href="#h-nav">Пита и чапати</a><a class="chip" href="#h-nav">Завтраки</a></div>
+        </div>
+      </div>
+      <div style="height:var(--space-20)"></div>
+    </div>
+    <div class="listbar listbar--static" style="margin-top:var(--space-6)">
+      <div class="listbar__in">
+        <div><p class="listbar__label">Мой список</p><p class="listbar__sum">2 позиции · 11&nbsp;500&nbsp;₸</p></div>
+        <button class="btn btn--primary" type="button">Открыть</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- МЕНЮ -->
+<section class="sg-section" aria-labelledby="h-menu">
+  <div class="container">
+    <h2 class="t-h1" id="h-menu">Элементы меню</h2>
+    <p class="t-meta">Строка «название ····· цена» — главный элемент страницы. Манди — крупные цифры порций. Пометка выгоды появляется только при выгоде от 5 %.</p>
+    <div class="grid" style="row-gap:var(--space-10)">
+      <div class="lg-6 sg-menu-demo">
+        <div>
+          <div class="line"><span class="line__name t-dish">Фатуш<span class="line__dots" aria-hidden="true"></span></span><span class="t-price">1&nbsp;900&nbsp;₸</span><button class="add" type="button" aria-label="В список: Фатуш, 1 900 ₸"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></button></div>
+          <p class="t-desc sg-line-desc">Свежие овощи с медово-горчичной заправкой <button class="text-btn" type="button" aria-expanded="false">Фото <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></p>
+        </div>
+        <div>
+          <div class="line"><span class="line__name t-dish">Салат с глазированным баклажаном и&nbsp;фетой<span class="line__dots" aria-hidden="true"></span></span><span class="t-price">3&nbsp;100&nbsp;₸</span><button class="add" type="button" aria-label="В список: Салат с глазированным баклажаном и фетой, 3 100 ₸"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></button></div>
+        </div>
+        <div>
+          <div class="line"><span class="line__name t-dish">Вафельная трубочка с варёной сгущёнкой<span class="line__dots" aria-hidden="true"></span></span><span class="oos">нет в наличии</span><button class="add" type="button" aria-label="Нет в наличии" disabled><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></button></div>
+        </div>
+        <div class="sg-row" style="gap:var(--space-3)">
+          <span class="badge">Рекомендуем</span>
+          <span class="save">−16&nbsp;%</span>
+          <span class="status"><svg viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>Открыто до 01:00</span>
+          <span class="status status--closed"><svg viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>Откроется в 11:00</span>
+        </div>
+        <div><span class="toast" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12.5 4 4 8-9"/></svg>Добавлено: Фатуш</span></div>
+      </div>
+      <div class="lg-6 sg-stack">
+        <div class="seg" role="group" aria-label="Сколько вас?">
+          <span class="seg__label">Сколько вас?</span>
+          <div class="seg__opts"><button class="seg__opt" type="button" aria-pressed="false">1</button><button class="seg__opt" type="button" aria-pressed="true">2</button><button class="seg__opt" type="button" aria-pressed="false">5</button></div>
+        </div>
+        <div>
+          <div class="sg-row" style="gap:var(--space-3)"><h3 class="t-dish-lg">Манди с курицей</h3><span class="badge">Рекомендуем</span></div>
+          <div class="portions" style="margin-top:var(--space-5)" role="group" aria-label="Порция: Манди с курицей">
+            <button class="portion" type="button" aria-pressed="false" data-key="0-0-0"><span class="portion__head"><span class="portion__n">1</span><span class="portion__unit">персона</span></span><span class="portion__price">3&nbsp;800&nbsp;₸</span></button>
+            <button class="portion" type="button" aria-pressed="true" data-key="0-0-1"><span class="portion__head"><span class="portion__n">2</span><span class="portion__unit">персоны</span></span><span class="portion__price">7&nbsp;500&nbsp;₸</span><span class="portion__pp">за персону — 3&nbsp;750&nbsp;₸</span></button>
+            <button class="portion" type="button" aria-pressed="false" data-key="0-0-2"><span class="portion__head"><span class="portion__n">5</span><span class="portion__unit">персон</span></span><span class="portion__price">16&nbsp;000&nbsp;₸</span><span class="portion__pp">за персону — 3&nbsp;200&nbsp;₸</span><span class="save">−16&nbsp;%</span></button>
+          </div>
+          <p class="t-desc" style="margin-top:var(--space-4)">Курица, томлённая до мягкости, на ароматном рисе со специями, пропитанном мясным соком</p>
+          <div class="line" style="margin-top:var(--space-4)"><span class="line__name t-meta">2 персоны<span class="line__dots" aria-hidden="true"></span></span><span class="t-price-lg">7&nbsp;500&nbsp;₸</span><button class="add" type="button" aria-label="В список: Манди с курицей, 2 персоны, 7 500 ₸"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  // Свотчи: токен, значение и контраст считаются из живых CSS-переменных.
+  var tokens = [
+    ['--color-bg', 'Фон страницы', null],
+    ['--color-surface', 'Поверхность: панели, полоса', null],
+    ['--color-surface-raised', 'Приподнятая: шторка, нажатие', null],
+    ['--color-text', 'Текст', '--color-bg'],
+    ['--color-text-muted', 'Второстепенный текст', '--color-bg'],
+    ['--color-accent', 'Акцент: карак', '--color-bg'],
+    ['--color-on-accent', 'Текст на акценте', '--color-accent'],
+    ['--color-border', 'Линии-разделители', null],
+    ['--color-border-strong', 'Границы полей и кнопок', '--color-bg'],
+    ['--color-icon', 'Иконки', '--color-bg'],
+    ['--color-success', 'Успех', '--color-bg'],
+    ['--color-error', 'Ошибка', '--color-bg']
+  ];
+  function rgb(str) { var m = str.match(/\d+(\.\d+)?/g); return m ? m.slice(0, 3).map(Number) : [0, 0, 0]; }
+  function lum(c) { var a = c.map(function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2]; }
+  function ratio(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+  function hex(c) { return '#' + c.map(function (v) { return ('0' + v.toString(16)).slice(-2); }).join('').toUpperCase(); }
+  document.querySelectorAll('[data-swatches]').forEach(function (ul) {
+    var scope = ul.closest('[data-theme]');
+    var probe = document.createElement('span'); scope.appendChild(probe);
+    function val(t) { probe.style.color = 'var(' + t + ')'; return rgb(getComputedStyle(probe).color); }
+    tokens.forEach(function (t) {
+      var c = val(t[0]);
+      var li = document.createElement('li'); li.className = 'sg-swatch';
+      var r = '';
+      if (t[2]) {
+        var v = ratio(c, val(t[2]));
+        var need = (t[0] === '--color-border-strong') ? 3 : 4.5;
+        r = '<span class="sg-swatch__ratio ' + (v >= need ? 'sg-pass' : '') + '">' + v.toFixed(1).replace('.', ',') + ':1</span>';
+      } else { r = '<span class="sg-swatch__ratio t-meta">фон</span>'; }
+      li.innerHTML = '<span class="sg-chip" style="background:var(' + t[0] + ')"></span>' +
+        '<span class="sg-swatch__name"><span class="sg-swatch__token">' + t[0] + '</span><span class="t-meta">' + t[1] + ' · ' + hex(c) + (t[2] ? ' · на ' + t[2].replace('--color-', '') : '') + '</span></span>' + r;
+      ul.appendChild(li);
+    });
+    probe.remove();
+  });
+
+  // Шкала отступов
+  var sp = document.querySelector('[data-spaces]');
+  sp.innerHTML = '<h3 class="t-h2 sg-sub">Отступы</h3>' + [1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20].map(function (n) {
+    return '<div class="sg-space"><span class="t-label">space-' + n + ' · ' + (n * 4) + '</span><span class="sg-space__bar" style="width:var(--space-' + n + ')"></span></div>';
+  }).join('');
+
+  // Тема и сетка
+  var root = document.documentElement;
+  var tb = document.getElementById('theme-toggle');
+  tb.addEventListener('click', function () {
+    var light = root.getAttribute('data-theme') !== 'light';
+    root.setAttribute('data-theme', light ? 'light' : 'dark');
+    tb.setAttribute('aria-pressed', String(light));
+    tb.querySelector('span').textContent = light ? 'Тёмная тема' : 'Светлая тема';
+  });
+  var gb = document.getElementById('grid-toggle'), ov = document.getElementById('overlay');
+  gb.addEventListener('click', function () {
+    var on = !ov.classList.contains('is-on');
+    ov.classList.toggle('is-on', on); gb.setAttribute('aria-pressed', String(on));
+  });
+  // Демонстрационные переключатели
+  document.querySelectorAll('.seg').forEach(function (g) {
+    g.addEventListener('click', function (e) { var b = e.target.closest('.seg__opt'); if (!b) return; g.querySelectorAll('.seg__opt').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); });
+  });
+  document.querySelectorAll('.portions').forEach(function (g) {
+    g.addEventListener('click', function (e) { var b = e.target.closest('.portion'); if (!b) return; g.querySelectorAll('.portion').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); });
+  });
+  document.querySelectorAll('.text-btn[aria-expanded]').forEach(function (b) {
+    b.addEventListener('click', function () { b.setAttribute('aria-expanded', String(b.getAttribute('aria-expanded') !== 'true')); });
+  });
+})();
+</script>
+</body>
+</html>
